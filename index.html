@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b12"><meta name="description" content="Разлом — неоновая игра о защите последнего реактора. Пять минут, десять сдвигов реальности, одна попытка спасти мир.">
+  <title>RIFT: Last Signal — v1.0</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Разлом"><span class="brand-icon">◈</span> РАЗЛОМ<span class="brand-sub">/ ПОСЛЕДНИЙ СИГНАЛ</span></a>
+      <div class="header-right"><span class="status"><i></i> СИСТЕМА АКТИВНА</span><button id="sound" class="icon-button" title="Включить звук" aria-label="Включить звук">ЗВУК: ВЫКЛ</button><button id="pause" class="icon-button" title="Пауза [Esc]">Ⅱ</button></div>
+    </header>
+    <main>
+      <div class="section-heading"><div><span class="eyebrow">ОПЕРАЦИЯ 001 / ОБЪЕКТ «ГЕЛИОС»</span><h1>Удержи последний свет<span>.</span></h1></div><span class="tag">SURVIVAL / 05:00</span></div>
+      <div class="layout">
+        <section class="arena-wrap" aria-label="Игровая арена">
+          <canvas id="game" width="1200" height="840" aria-label="Арена защиты реактора"></canvas>
+          <div class="arena-top"><span><i class="live-dot"></i> LIVE <b>СЕКТОР <span id="sector">01</span></b></span><span id="clock">00:00 <em>/ 05:00</em></span></div>
+          <div class="arena-corner corner-tl"></div><div class="arena-corner corner-tr"></div><div class="arena-corner corner-bl"></div><div class="arena-corner corner-br"></div>
+          <div id="announcement" class="announcement" aria-live="polite"></div>
+          <div class="arena-bottom"><span id="coordinates">X 0600 : Y 0530</span><span>ГЕЛИОС / ЗОНА СДЕРЖИВАНИЯ</span></div>
+          <div id="overlay" class="overlay">
+            <div id="screen" class="screen"></div>
+          </div>
+          <div id="mobile-controls" class="mobile-controls"><div id="joystick" class="joystick"><span></span></div><div class="touch-actions"><button id="touch-pulse">E</button><button id="touch-dash">↗</button></div></div>
+        </section>
+        <aside>
+          <section class="panel reactor-panel"><div class="panel-label">01 / СОСТОЯНИЕ ОБЪЕКТА <span class="tiny-dot"></span></div><div class="reactor-title">Реактор «Гелиос»<span id="reactor-percent">100<span>%</span></span></div><div class="bar reactor-bar"><i id="reactor-bar"></i></div><div class="fine">ЦЕЛОСТНОСТЬ ЯДРА <span id="reactor-state">СТАБИЛЬНО</span></div><div class="pilot-health"><span>БРОНЯ ПИЛОТА</span><div id="health-pips"></div></div></section>
+          <section class="panel rule-panel"><div class="panel-label">02 / ТЕКУЩАЯ РЕАЛЬНОСТЬ</div><div class="rule-heading"><span id="rule-icon">◎</span><h2 id="rule-name">Стабильность</h2></div><p id="rule-desc">Законы физики в норме. Пока.</p><div class="rift-count"><span>СЛЕДУЮЩИЙ РАЗЛОМ</span><strong id="rift-time">00:30</strong></div><div class="bar rift-bar"><i id="rift-bar"></i></div></section>
+          <section class="panel stats-panel"><div class="panel-label">03 / ТЕЛЕМЕТРИЯ</div><div class="stat-row"><span>Уничтожено</span><strong id="kills">000</strong></div><div class="stat-row"><span>Очки</span><strong id="score">00000</strong></div><div class="stat-row record"><span>Лучший результат</span><strong id="best">00000</strong></div></section>
+          <section class="panel ability-panel"><div class="panel-label">04 / АРСЕНАЛ</div><div class="ability"><kbd>SPACE</kbd><div><strong>Фазовый рывок</strong><span id="dash-label">ГОТОВ</span></div><div id="dash-ring" class="ability-indicator">↗</div></div><div class="ability"><kbd>E</kbd><div><strong>Импульс ядра</strong><span id="pulse-label">ГОТОВ</span></div><div id="pulse-ring" class="ability-indicator">◎</div></div><div id="upgrades" class="upgrade-list"><span>МОДУЛИ НЕ УСТАНОВЛЕНЫ</span></div></section>
+        </aside>
+      </div>
+      <footer><div><span class="footer-mark">✧</span> Реальность нестабильна. Твоя цель — нет.</div><div class="controls"><span><kbd>W A S D</kbd> движение</span><span><kbd>ЛКМ</kbd> огонь</span><span><kbd>ESC</kbd> пауза</span></div></footer>
+    </main>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
